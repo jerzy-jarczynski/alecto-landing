@@ -1,7 +1,7 @@
 /* ~ * Variables * ~ */
 
 /* Font Family */
-$text-click: 'Raleway', sans-serif;
+$text-main: 'Raleway', sans-serif;
 $text-title-bold: 'Myriad Pro', sans-serif;
 $text-map: 'Signika', sans-serif;
 
@@ -24,3 +24,113 @@ $color-tile-1: #F9F9FA;
 $color-tile-2: #EFEFEF;
 $color-tile-3: #E4E4E4;
 $color-tile-4: #2EDDAC;
+
+/* ~ * Global styles * ~ */
+
+body, *, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+/* Container */
+
+.container {
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+/* Row */
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+
+    * {
+        flex-shrink: 0;
+    }
+}
+
+/* ~ * Navigation * ~ */
+
+.navigation {
+
+    .row {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu {
+
+        display: flex;
+        align-items: center;
+
+        font-family: $text-main;
+        font-weight: 700;
+        font-size: $font-xs;
+
+        li {
+            margin-left: 20px;
+        }
+
+        li:first-of-type {
+            margin-left: 0;
+        }
+        
+        a {
+            color: $color-light;
+        }
+
+        .search {
+            font-size: 0;
+        }
+
+        i {
+            font-size: 23px;
+        }
+
+    }
+}
+
+/* ~ * Splash * ~ */
+
+.splash {
+    background-image: url("../images/splash-background.png");
+    height: 100vh;
+    max-height: 1068px;
+}
