@@ -28,6 +28,8 @@ $color-tile-4: #2EDDAC;
 
 /* ~ * Global styles * ~ */
 
+/* Reset */
+
 *, *::before, *::after {
     box-sizing: border-box;
     padding: 0;
@@ -40,6 +42,13 @@ a {
 
 ul, ol {
     list-style-type: none;
+}
+
+/* Section */
+
+.section-padding {
+    padding-top: 110px;
+    padding-bottom: 110px;
 }
 
 /* Container */
@@ -89,11 +98,21 @@ ul, ol {
 
 /* Titles */
 
-.title-light {
-    color: $color-light;
+.title {
     font-size: $font-xl;
     font-family: $text-main;
     letter-spacing: 1.5px;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: $font-xxl;
+    }
+}
+
+.title-light {
+    color: $color-light;
     font-weight: 100;
 
     .bold {
@@ -101,10 +120,9 @@ ul, ol {
     }
 }
 
-@media (min-width: 768px) {
-    .title-light {
-        font-size: $font-xxl;
-    }
+.title-dark {
+    color: $color-dark;
+    font-weight: 200;
 }
 
 .subtitle-light {
@@ -113,6 +131,37 @@ ul, ol {
     font-family: $text-title-bold;
     font-weight: 400;
     letter-spacing: 0.6px;
+}
+
+.subtitle-dark {
+    color: $color-dark;
+    font-size: $font-s;
+    font-family: $text-main;
+    font-weight: 400;
+    letter-spacing: 0.45px;
+}
+
+.title, .subtitle-light, .subtitle-dark {
+    text-align: center;
+}
+
+.title-small {
+    font-family: $text-title-bold;
+    color: $color-black;
+    font-size: $font-l;
+    font-weight: 400;
+    letter-spacing: 0.75px;
+    text-align: center;
+}
+
+.description {
+    font-family: $text-main;
+    color: $color-dark;
+    font-size: $font-s;
+    font-weight: 400;
+    letter-spacing: 0.45px;
+    line-height: 30px;
+    text-align: center;
 }
 
 /* Buttons */
@@ -232,7 +281,89 @@ ul, ol {
         padding: 0 15px;
 
         .subtitle-light {
-            margin: 30px 0 60px;
+            margin-bottom: 60px;
+        }
+    }
+}
+
+/* ~ * About * ~ */
+
+.about {
+
+    .row {
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    .about-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .title-small {
+        margin-bottom: 30px;
+    }
+
+    .image {
+        background-color: $color-background-gray;
+        width: 182px;
+        height: 182px;
+        position: relative;
+        border-radius: 100%;
+        margin-bottom: 40px;
+        margin-top: 80px;
+    }
+
+    .about-icon {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .icon-atom {
+        width: 47px;
+        height: 53px;
+    }
+
+    .image, .about-icon {
+        transition: all .4s ease-in-out;
+    }
+
+    .image:hover {
+        background-color: $color-green;
+    }
+
+    .image:hover > .about-icon {
+        filter: brightness(200%);
+    }
+}
+
+@media (min-width: 768px) {
+    .about {
+        .about-col {
+            max-width: 50%;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    .about {
+        .title-small {
+            margin-bottom: 50px;
+        }
+
+        .image {
+            margin-bottom: 85px;
+            margin-top: 150px;
+        }
+
+        .about-col {
+            max-width: 25%;
         }
     }
 }
