@@ -15,6 +15,7 @@ $font-xxl: 60px;
 
 /* Colors */
 $color-light: #ffffff;
+$color-light-transparent: #ffffff00;
 $color-dark: #87949e;
 $color-black: #000000;
 $color-green: #17daa3;
@@ -27,7 +28,7 @@ $color-tile-4: #2EDDAC;
 
 /* ~ * Global styles * ~ */
 
-body, *, *::before, *::after {
+*, *::before, *::after {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -86,12 +87,68 @@ ul, ol {
     }
 }
 
+/* Titles */
+
+.title-light {
+    color: $color-light;
+    font-size: $font-xl;
+    font-family: $text-main;
+    letter-spacing: 1.5px;
+    font-weight: 100;
+
+    .bold {
+        font-weight: 700;
+    }
+}
+
+@media (min-width: 768px) {
+    .title-light {
+        font-size: $font-xxl;
+    }
+}
+
+.subtitle-light {
+    color: $color-light;
+    font-size: $font-m;
+    font-family: $text-title-bold;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+}
+
+/* Buttons */
+
+.btn {
+    display: inline-block;
+    padding: 10px 50px;
+    border-radius: 500px;
+    text-align: center;
+    font-family: $text-main;
+    font-size: $font-xs;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.35px;
+    transition: all 0.4s ease-in-out;
+    color: $color-light;
+}
+
+.btn-transparent {
+    background-color: $color-light-transparent;
+    border: 2px solid #ffffff;
+}
+
+.btn-green {
+    background-color: $color-green;
+    border: 2px solid $color-green;
+}
+
 /* ~ * Navigation * ~ */
 
 .navigation {
 
+    padding-top: 50px;
+
     .row {
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
     }
 
@@ -99,18 +156,12 @@ ul, ol {
 
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        width: 100%;
 
         font-family: $text-main;
         font-weight: 700;
         font-size: $font-xs;
-
-        li {
-            margin-left: 20px;
-        }
-
-        li:first-of-type {
-            margin-left: 0;
-        }
         
         a {
             color: $color-light;
@@ -125,12 +176,63 @@ ul, ol {
         }
 
     }
+
+    .logo {
+        margin-bottom: 30px;
+    }
+
+    .logo a {
+        font-size: 0;
+    }
+}
+
+.menu-wrapper {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .menu-wrapper {
+        width: 60%;
+    }
+
+    .navigation .logo {
+        margin-bottom: 0;
+    }
+
+    .navigation .row {
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 1200px) {
+    .menu-wrapper {
+        width: 50%;
+        max-width: 640px;
+    }
 }
 
 /* ~ * Splash * ~ */
 
 .splash {
     background-image: url("../images/splash-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     height: 100vh;
-    max-height: 1068px;
+    position: relative;
+
+    .banner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        padding: 0 15px;
+
+        .subtitle-light {
+            margin: 30px 0 60px;
+        }
+    }
 }
