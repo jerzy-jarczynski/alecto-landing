@@ -56,6 +56,11 @@ ul, ol {
     padding-bottom: 165px;
 }
 
+.section-padding-190 {
+    padding-top: 190px;
+    padding-bottom: 190px;
+}
+
 /* Container */
 
 .container {
@@ -922,4 +927,50 @@ ul, ol {
             margin-right: 15px;
         }
     }
+}
+
+/* ~ * Location * ~ */
+
+.location {
+    position: relative;
+    overflow: hidden;
+
+    .title, .description {
+        text-align: left;
+        margin-bottom: 70px;
+    }
+
+    .col {
+        width: 100%;
+    }
+
+    .image {
+        width: 100%;
+        margin-top: 60px;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .location {
+        .col {
+            width: 50%;
+        }
+
+        .image {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0, -50%);
+            width: 50%;
+    
+            img {
+                width: 100%;
+            }
+        }
+    }
+
 }
