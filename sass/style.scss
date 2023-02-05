@@ -468,7 +468,7 @@ ul, ol {
     background-color: $color-tile-1;
 
     .title {
-        font-weight: 400;
+        font-weight: 200;
     }
 
     .row {
@@ -568,4 +568,201 @@ ul, ol {
             width: 50%;
         }
     }
+}
+
+/* ~ * Team * ~ */
+
+@keyframes tiles-bg-1 {
+    0%   {background-color: $color-tile-1;}
+    25%  {background-color: $color-tile-2;}
+    50%  {background-color: $color-tile-3;}
+    75%  {background-color: $color-tile-2;}
+    100% {background-color: $color-tile-1;}
+}
+
+@keyframes tiles-bg-2 {
+    0%   {background-color: $color-tile-2;}
+    25%  {background-color: $color-tile-3;}
+    50%  {background-color: $color-tile-2;}
+    75%  {background-color: $color-tile-1;}
+    100% {background-color: $color-tile-2;}
+}
+
+@keyframes tiles-bg-3 {
+    0%   {background-color: $color-tile-3;}
+    25%  {background-color: $color-tile-2;}
+    50%  {background-color: $color-tile-1;}
+    75%  {background-color: $color-tile-2;}
+    100% {background-color: $color-tile-3;}
+}
+
+
+.team {
+    padding-top: 110px;
+
+    .subtitle-dark {
+        margin-bottom: 110px;
+    }
+
+    .tiles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        max-width: 2000px;
+        margin: 0 auto;
+    }
+
+    .tiles-col {
+        width: 100%;
+        padding-bottom: 100%;
+        perspective: 1000px;
+        perspective-origin: 50% 50%;
+        position: relative;
+    }
+
+    .tiles-col-1 > .member {
+        background-color: $color-tile-1;
+        animation-name: tiles-bg-1;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+    
+    .tiles-col-2 > .member {
+        background-color: $color-tile-2;
+        animation-name: tiles-bg-2;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+
+    .tiles-col-3 > .member {
+        background-color: $color-tile-3;
+        animation-name: tiles-bg-3;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+
+    .member {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all .4s ease-in-out;
+    }
+
+    .member::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        background-color: $color-tile-4;
+        opacity: 0;
+        transition: all .8s ease-in-out;
+    }
+
+    .tiles-col::before {
+        content: "John Doe";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        opacity: 0;
+        transition: all .2s ease-in;
+        text-align: center;
+        color: $color-light;
+        font-weight: 400;
+        font-family: $text-main;
+        font-size: $font-xl;
+    }
+
+    .tiles-col:hover > .member {
+        transform: scaleX(1) scaleY(1) scaleZ(1) rotateX(0deg) rotateY(180deg) rotateZ(0deg) translateX(0px) translateY(0px) translateZ(0px) skewX(0deg) skewY(0deg);
+    }
+
+    .tiles-col:hover > .member::before {
+        opacity: 1;
+    }
+
+    .tiles-col:hover::before {
+        opacity: 1;
+    }
+
+
+}
+
+@media (min-width: 401px) {
+    .team {
+        .tiles-col {
+            width: 400px;
+            padding-bottom: 400px;
+        }
+    }
+}
+
+@media (min-width: 601px) {
+    .team {
+        .tiles-col {
+            width: 50%;
+            padding-bottom: 50%;
+        }
+    }  
+}
+
+@media (min-width: 820px) {
+    .team {
+        .tiles-col {
+            width: 400px;
+            padding-bottom: 400px;
+        }
+    }
+}
+
+@media (min-width: 1020px) {
+    .team {
+        .tiles-col {
+            width: 33.33333%;
+            padding-bottom: 33.33333%;
+        }
+    }  
+}
+
+@media (min-width: 1220px) {
+    .team {
+        .tiles-col {
+            width: 400px;
+            padding-bottom: 400px;
+        }
+    }
+}
+
+@media (min-width: 1420px) {
+    .team {
+        .tiles-col {
+            width: 25%;
+            padding-bottom: 25%;
+        }
+    }  
+}
+
+@media (min-width: 1620px) {
+    .team {
+        .tiles-col {
+            width: 400px;
+            padding-bottom: 400px;
+        }
+    }
+}
+
+@media (min-width: 1820px) {
+    .team {
+        .tiles-col {
+            width: 20%;
+            padding-bottom: 20%;
+        }
+    }  
 }
