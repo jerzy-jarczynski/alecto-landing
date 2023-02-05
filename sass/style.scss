@@ -974,3 +974,22 @@ ul, ol {
     }
 
 }
+
+/* ~ * Promo * ~ */
+
+.promo {
+    padding-top: 280px;
+    padding-bottom: 270px;
+    text-align: center;
+    background-image: url("../images/invitation-background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+
+    h2 {
+        margin-bottom: 100px;
+    }
+}
+
+/* ~ * Footer * ~ */
