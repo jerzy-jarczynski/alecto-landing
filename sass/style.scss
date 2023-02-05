@@ -993,3 +993,93 @@ ul, ol {
 }
 
 /* ~ * Footer * ~ */
+
+footer {
+    position: relative;
+    padding-top: 70px;
+    padding-bottom: 300px;
+    overflow: hidden;
+    font-family: $text-main;
+    font-size: $font-s;
+    font-weight: 400;
+    color: $color-dark;
+
+    .image {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        width: 120%;
+        max-width: 1100px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .copyright {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+
+        img {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 20px;
+        }
+    }
+
+    .footer-links {
+        text-align: center;
+
+        li {
+            margin-bottom: 20px;
+        }
+
+        a {
+            opacity: 0.45;
+            color: $color-dark;
+            transition: all .4s ease;
+        }
+
+        a:hover {
+            opacity: 1;
+        }
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (min-width: 992px) {
+    footer {
+        padding-bottom: 660px;
+
+        .row {
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: space-between;
+        }
+
+        .copyright {
+            width: auto;
+            margin-bottom: 0;
+        }
+
+        .footer-links {
+            width: 100%;
+            max-width: 455px;
+            display: flex;
+            justify-content: space-between;
+
+            li {
+                margin-bottom: 0;
+                margin-top: 2px;
+            }
+
+        }
+    }
+}
