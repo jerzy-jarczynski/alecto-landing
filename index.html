@@ -27,7 +27,7 @@
                         </a>
                     </div>
 
-                    <div class="menu-wrapper">
+                    <div class="menu-wrapper" id="menu">
                         <ul class="menu">
                             <li>
                                 <a href="#">
@@ -55,12 +55,20 @@
                                 </a>
                             </li>
                             <li class="search">
-                                <a href="#">
+                                <input type="search" name="q" id="site-search" class="closed">
+                                <a href="#" class="search-button" id="search-button">
                                     <i class="fa-solid fa-magnifying-glass"></i>search
                                 </a>
                             </li>
                         </ul>
                     </div>
+
+                    <div id="nav-icon" class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
 
                 </div>
 
@@ -562,7 +570,7 @@
 
             </div>
 
-        </section>        
+        </section>
 
     </main>
 
@@ -589,5 +597,6 @@
         </div>
     </footer>
 
+    <script src="js/script.js"></script>
 </body>
 </html>
